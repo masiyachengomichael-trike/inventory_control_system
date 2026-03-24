@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(splash_screen));
             label1 = new Label();
             label2 = new Label();
             guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            button1 = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
@@ -66,28 +69,42 @@
             guna2CircleProgressBar1.FillColor = Color.FromArgb(200, 213, 218, 223);
             guna2CircleProgressBar1.Font = new Font("Segoe UI", 12F);
             guna2CircleProgressBar1.ForeColor = Color.White;
-            guna2CircleProgressBar1.Location = new Point(986, 453);
+            guna2CircleProgressBar1.Location = new Point(987, 387);
             guna2CircleProgressBar1.Minimum = 0;
             guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
             guna2CircleProgressBar1.ProgressColor = Color.Teal;
             guna2CircleProgressBar1.ProgressColor2 = Color.FromArgb(224, 224, 224);
             guna2CircleProgressBar1.ProgressOffset = 2;
             guna2CircleProgressBar1.ProgressStartCap = System.Drawing.Drawing2D.LineCap.Round;
-            guna2CircleProgressBar1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CircleProgressBar1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleProgressBar1.Size = new Size(169, 169);
+            guna2CircleProgressBar1.Size = new Size(150, 150);
             guna2CircleProgressBar1.TabIndex = 2;
-            guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
             // 
-            // button1
+            // label3
             // 
-            button1.Location = new Point(574, 416);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label3.AutoSize = true;
+            label3.BackColor = Color.LightSeaGreen;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(769, 512);
+            label3.Name = "label3";
+            label3.Size = new Size(153, 32);
+            label3.TabIndex = 4;
+            label3.Text = "Loading.......";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(507, 564);
+            label4.Name = "label4";
+            label4.Size = new Size(96, 25);
+            label4.TabIndex = 5;
+            label4.Text = "Copyright ";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
             // 
             // splash_screen
             // 
@@ -96,14 +113,17 @@
             BackColor = SystemColors.ButtonHighlight;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1205, 634);
-            Controls.Add(button1);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(guna2CircleProgressBar1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Cursor = Cursors.WaitCursor;
             FormBorderStyle = FormBorderStyle.None;
             Name = "splash_screen";
             Text = "splash_screen";
             WindowState = FormWindowState.Maximized;
+            Load += splash_screen_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,6 +133,8 @@
         private Label label1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
-        private Button button1;
+        private Label label3;
+        private Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }
